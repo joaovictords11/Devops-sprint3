@@ -1,6 +1,6 @@
 package com.exemplo.patio.service;
 
-import com.exemplo.patio.dto.RegistroDTO;
+import com.exemplo.patio.dto.RegistroDto;
 import com.exemplo.patio.model.Moto;
 import com.exemplo.patio.model.Registro;
 import com.exemplo.patio.repository.MotoRepository;
@@ -22,14 +22,14 @@ public class RegistroService {
         this.motoRepo = motoRepo;
     }
 
-    public Registro checkIn(RegistroDTO dto) {
+    public Registro checkIn(RegistroDto dto) {
         Moto moto = motoRepo.findByPlaca(dto.getPlaca()).orElseThrow(() -> new EntityNotFoundException("Moto não encontrada"));
         registroRepo.findByMotoPlacaAndCheckOutIsNull(dto.getPlaca()).ifPresent(r -> { throw new IllegalStateException("Moto já no pátio"); });
         return registroRepo.save(new Registro(null, moto, LocalDateTime.now(), null));
     }
 
     @Transactional
-    public Registro checkOut(RegistroDTO dto) {
+    public Registro checkOut(RegistroDto dto) {
         Registro reg = registroRepo.findByMotoPlacaAndCheckOutIsNull(dto.getPlaca()).orElseThrow(() -> new EntityNotFoundException("Registro de entrada não encontrado"));
         reg.setCheckOut(LocalDateTime.now());
         return reg;

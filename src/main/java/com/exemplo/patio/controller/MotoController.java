@@ -1,6 +1,6 @@
 package com.exemplo.patio.controller;
 
-import com.exemplo.patio.dto.MotoDTO;
+import com.exemplo.patio.dto.MotoDto;
 import com.exemplo.patio.model.Moto;
 import com.exemplo.patio.service.MotoService;
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ public class MotoController {
     public Page<Moto> listar(Pageable pageable) { return service.listar(pageable); }
 
     @PostMapping
-    public Moto cadastrar(@RequestBody @Valid MotoDTO dto) { return service.cadastrar(dto); }
+    public Moto cadastrar(@RequestBody @Valid MotoDto dto) { return service.cadastrar(dto); }
 
     @GetMapping("/search")
     public Page<Moto> buscarPorPlaca(@RequestParam String placa, Pageable pageable) {

@@ -45,8 +45,8 @@ Este projeto é uma API REST desenvolvida em Java utilizando Spring Boot, que te
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
-    cd <NOME_DO_PROJETO>
+    git clone https://github.com/joaovictords11/Devops-sprint3.git
+    cd Devops-sprint3
     ```
 
 2.  **Compile e empacote o projeto:**
@@ -58,9 +58,8 @@ Este projeto é uma API REST desenvolvida em Java utilizando Spring Boot, que te
 3.  **Execute a aplicação:**
     Após a compilação, o arquivo `.jar` estará na pasta `target/`. Execute-o com o seguinte comando:
     ```bash
-    java -jar target/nome-do-seu-arquivo.jar
+    java -jar target/patio-api.jar
     ```
-    *Substitua `nome-do-seu-arquivo.jar` pelo nome real do arquivo gerado.*
 
 4.  A API estará disponível em `http://localhost:8080`.
 

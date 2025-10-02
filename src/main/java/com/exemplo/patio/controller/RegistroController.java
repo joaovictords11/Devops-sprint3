@@ -1,6 +1,6 @@
 package com.exemplo.patio.controller;
 
-import com.exemplo.patio.dto.RegistroDTO;
+import com.exemplo.patio.dto.RegistroDto;
 import com.exemplo.patio.model.Registro;
 import com.exemplo.patio.repository.RegistroRepository;
 import com.exemplo.patio.service.RegistroService;
@@ -23,12 +23,12 @@ public class RegistroController {
     }
 
     @PostMapping("/checkin")
-    public Registro checkIn(@RequestBody @Valid RegistroDTO dto) {
+    public Registro checkIn(@RequestBody @Valid RegistroDto dto) {
         return service.checkIn(dto);
     }
 
     @PostMapping("/checkout")
-    public Registro checkOut(@RequestBody @Valid RegistroDTO dto) {
+    public Registro checkOut(@RequestBody @Valid RegistroDto dto) {
         return service.checkOut(dto);
     }
 

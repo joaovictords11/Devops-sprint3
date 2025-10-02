@@ -1,6 +1,6 @@
 package com.exemplo.patio.service;
 
-import com.exemplo.patio.dto.MotoDTO;
+import com.exemplo.patio.dto.MotoDto;
 import com.exemplo.patio.model.Moto;
 import com.exemplo.patio.repository.MotoRepository;
 import org.springframework.cache.annotation.Cacheable;
@@ -24,7 +24,7 @@ public class MotoService {
         return repo.findAll(pageable);
     }
 
-    public Moto cadastrar(MotoDTO dto) {
+    public Moto cadastrar(MotoDto dto) {
         Moto moto = new Moto(null, dto.getPlaca(), dto.getModelo());
         return repo.save(moto);
     }

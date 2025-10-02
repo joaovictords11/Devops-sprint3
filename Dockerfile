@@ -1,19 +1,24 @@
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+FROM maven:3.9.5-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 
 COPY pom.xml .
+RUN mvn dependency:go-offline
+
 COPY src ./src
 
 RUN mvn clean package -DskipTests
 
-# Etapa de runtime
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre-focal
 
 WORKDIR /app
 
-COPY --from=build /app/target/patio-api-0.0.1-SNAPSHOT.jar app.jar
+RUN groupadd -r appgroup && useradd --no-log-init -r -g appgroup appuser
 
-EXPOSE 80
+COPY --from=builder --chown=appuser:appgroup /app/target/*.jar app.jar
+
+EXPOSE 8080
+
+USER appuser
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

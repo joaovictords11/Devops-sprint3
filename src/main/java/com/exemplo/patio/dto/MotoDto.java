@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class MotoDTO {
+public class MotoDto {
     @NotBlank
     private String placa;
 
