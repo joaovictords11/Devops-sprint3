@@ -32,7 +32,7 @@ public class RegistroService {
     public Registro checkOut(RegistroDto dto) {
         Registro reg = registroRepo.findByMotoPlacaAndCheckOutIsNull(dto.getPlaca()).orElseThrow(() -> new EntityNotFoundException("Registro de entrada não encontrado"));
         reg.setCheckOut(LocalDateTime.now());
-        return reg;
+        return registroRepo.save(reg);
     }
 
     public Page<Registro> listar(String placa, Pageable pageable) {

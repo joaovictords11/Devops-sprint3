@@ -27,7 +27,7 @@ public class RegistroController {
         return service.checkIn(dto);
     }
 
-    @PostMapping("/checkout")
+    @PutMapping("/checkout")
     public Registro checkOut(@RequestBody @Valid RegistroDto dto) {
         return service.checkOut(dto);
     }

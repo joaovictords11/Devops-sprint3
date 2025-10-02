@@ -23,7 +23,7 @@ Este projeto é uma API REST desenvolvida em Java utilizando Spring Boot, que te
 
 ### 📄 Registros (Movimentações)
 - `POST /registros/checkin` — Realiza o check-in da moto no pátio
-- `POST /registros/checkout` — Realiza o check-out da moto
+- `PUT /registros/checkout` — Realiza o check-out da moto
 - `GET /registros?placa={placa}` — Lista os registros de uma moto (com paginação)
 
 ## 📦 Entidades
