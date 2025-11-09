@@ -46,4 +46,9 @@ public class RegistroController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/teste")
+    public String teste() {
+        return "teste CI - CD";
+    }
 }
