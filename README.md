@@ -12,6 +12,7 @@ Este projeto é uma API REST desenvolvida em Java 17 utilizando Spring Boot, que
 - Bean Validation
 - Lombok
 - Maven
+- Docker
 - Tratamento centralizado de erros com ExceptionHandler
 
 ## 🔗 Endpoints Disponíveis
