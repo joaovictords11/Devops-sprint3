@@ -47,4 +47,9 @@ public class RegistroController {
         }
     }
 
+    @GetMapping("/teste")
+    public String teste() {
+        return "teste CI - CD";
+    }
+
 }
